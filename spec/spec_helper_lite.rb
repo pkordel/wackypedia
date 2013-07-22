@@ -1,6 +1,12 @@
 ENV['RAILS_ENV'] ||= 'test'
-  
+
 require 'minitest/autorun'
+
+# require 'minitest/rails'
+# require 'minitest/rails/capybara'
+require 'minitest/focus'
+require 'minitest/colorize'
+
 require 'rr'
 require 'ostruct'
 $: << File.expand_path('../lib', File.dirname(__FILE__))
