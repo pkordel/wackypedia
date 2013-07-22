@@ -26,9 +26,10 @@ module Wackypedia
     # config.i18n.default_locale = :de
 
     Rails.application.config.generators do |g|
-      g.helper     false
-      g.assets     false
-      g.view_specs false
+      g.helper      false
+      g.assets      false
+      g.jbuilder    false
+      g.view_specs  false
     end
   end
 end
