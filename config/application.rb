@@ -5,8 +5,6 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
-require "minitest/rails/railtie"
-# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -30,7 +28,6 @@ module Wackypedia
       g.helper      false
       g.assets      false
       g.jbuilder    false
-      g.view_specs  false
     end
   end
 end
