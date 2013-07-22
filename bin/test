@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+if ARGV.empty?
+  puts <<-EOH
+Usage:
+  script/spec [spec match string]
+
+Example:
+  spec site
+  spec site_spec
+  spec site_spec account_spec
+
+  Above would run all specs matching site
+  (ie: spec/unit/site_spec.rb, spec/functional/admin/sites_controller.rb, etc.)
+
+EOH
+  exit
+end
+
+root_path = File.expand_path("../../", __FILE__)
+
+Dir.chdir(root_path) do
+  specs = Dir.glob('spec/**/*_spec.rb').map do |file|
+    # check if any of the inputs match the file
+    file if ARGV.any? { |match| file =~ /#{match}/ }
+  end.compact.join(' ')
+
+  test_loader = File.expand_path('../test_loader', __FILE__)
+
+  $stdout.sync = true
+  command = "ruby -Ispec #{test_loader} #{specs}"
+
+  puts(command)
+
+  IO.popen(command) { |com| com.each_char { |c| print(c) } }
+end

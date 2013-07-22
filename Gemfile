@@ -39,7 +39,7 @@ end
 
 group :test do
   gem 'rr'
-  gem 'minitest-spec-rails'
+  gem 'minitest'
   gem 'minitest-rails-capybara'
   gem 'minitest-colorize'
   gem 'minitest-focus'
