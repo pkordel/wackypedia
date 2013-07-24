@@ -1,9 +1,8 @@
 class Encyclopedia
-  attr_reader :name, :entries
+  attr_reader :name
 
-  def initialize(name: nil, entries: [])
-    @name    = name
-    @entries = entries
+  def initialize(name: nil)
+    @name = name
   end
 
   def self.model_name
@@ -16,9 +15,17 @@ class Encyclopedia
     end
   end
 
+  def entries
+    ArticleRepository.all_articles
+  end
+
+  def add_entry(entry)
+    ArticleRepository.add_article(entry)
+  end
+
   private
 
   def article_source
-    @article_source ||= Article.public_method(:new)
+    @article_source ||= ArticleRepository.public_method(:new_article)
   end
 end

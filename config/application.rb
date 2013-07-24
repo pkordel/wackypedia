@@ -24,6 +24,8 @@ module Wackypedia
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.autoload_paths += %W(#{config.root}/app/persistence)
+
     Rails.application.config.generators do |g|
       g.helper      false
       g.assets      false

@@ -5,6 +5,8 @@
   <header>
     <h1><%= entry.title %></h1>
   </header>
-  <p><%= entry.content %></p>
+  <p><%= entry.body %></p>
 </article>
 <%- end -%>
+
+<p><%= link_to 'New article', new_article_path, class: 'btn btn-primary' %></p>

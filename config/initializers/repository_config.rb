@@ -1,0 +1,1 @@
+ArticleRepository.instance = ArticleRepository.new

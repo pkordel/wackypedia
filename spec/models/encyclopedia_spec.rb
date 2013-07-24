@@ -3,7 +3,8 @@ require_relative '../../app/models/encyclopedia'
 
 describe Encyclopedia do
   subject { Encyclopedia.new(name: 'Wacky') }
-
+  before { ArticleRepository.clear }
+  
   it 'has a name' do
     subject.name.must_equal 'Wacky'
   end
