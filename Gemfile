@@ -23,8 +23,6 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'thin'
 
-gem 'debugger', group: [:development, :test]
-
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'high_voltage'
@@ -44,3 +42,5 @@ group :test do
   gem 'minitest-colorize'
   gem 'minitest-focus'
 end
+
+gem 'debugger', group: [:development, :test]

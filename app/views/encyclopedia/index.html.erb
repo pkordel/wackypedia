@@ -1,0 +1,10 @@
+<% content_for :title do %><%= encyclopedia.name %><% end %>
+
+<%- @entries.each do |entry| -%>
+<article>
+  <header>
+    <h1><%= entry.title %></h1>
+  </header>
+  <p><%= entry.content %></p>
+</article>
+<%- end -%>

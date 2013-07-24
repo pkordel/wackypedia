@@ -11,6 +11,10 @@ require 'rr'
 require 'ostruct'
 $: << File.expand_path('../lib', File.dirname(__FILE__))
 
+module Kernel
+  alias_method :context, :describe
+end
+
 def stub_module(full_name, &block)
   stub_class_or_module(full_name, Module)
 end

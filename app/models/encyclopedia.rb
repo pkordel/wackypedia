@@ -1,9 +1,9 @@
 class Encyclopedia
-  attr_reader :name, :articles
+  attr_reader :name, :entries
 
-  def initialize(name: nil)
-    @name = name
-    @articles = []
+  def initialize(name: nil, entries: [])
+    @name    = name
+    @entries = entries
   end
 
   def self.model_name

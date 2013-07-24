@@ -1,3 +1,3 @@
 Wackypedia::Application.routes.draw do
-  root 'visitors#new'
+  root 'encyclopedia#index'
 end
