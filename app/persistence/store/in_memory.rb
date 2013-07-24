@@ -1,4 +1,4 @@
-module Engines
+module Store
 
   class InMemory
     extend Forwardable

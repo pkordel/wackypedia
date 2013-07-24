@@ -1,11 +1,11 @@
 require_relative '../../spec_helper_lite'
-require_relative '../../../app/persistence/engines/in_memory'
+require_relative '../../../app/persistence/store/in_memory'
 
-describe Engines::InMemory do
+describe Store::InMemory do
   let(:first)  { Struct.new(:id, :title, :body).new(nil, 'Hello', 'World') }
   let(:second) { Struct.new(:id, :title, :body).new(nil, 'Hello', 'World') }
 
-  subject { Engines::InMemory.new }
+  subject { Store::InMemory.new }
 
   it "adds records" do
     subject.add first

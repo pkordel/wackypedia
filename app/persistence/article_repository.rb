@@ -19,7 +19,7 @@ class ArticleRepository
     def_delegator  'instance.engine', :take, :limit
   end
 
-  def initialize(engine: Engines::InMemory)
+  def initialize(engine: Store::InMemory)
     @engine = engine.new
   end
 
