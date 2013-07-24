@@ -1,5 +1,5 @@
 class ArticleRepository
-  attr_reader :engine
+  attr_reader :store
 
   class << self
     extend Forwardable
@@ -13,22 +13,22 @@ class ArticleRepository
       @instance = instance
     end
 
-    def_delegators 'instance.engine', :find, :count, :clear, :first, :last, :limit
+    def_delegators 'instance.store', :find, :count, :clear, :first, :last, :limit
     def_delegators :instance, :all_articles, :add_article, :new_article
-    def_delegator  'instance.engine', :remove,  :delete
-    def_delegator  'instance.engine', :take,    :limit
+    def_delegator  'instance.store', :remove,  :delete
+    def_delegator  'instance.store', :take,    :limit
   end
 
-  def initialize(engine: Store::InMemory)
-    @engine = engine.new
+  def initialize(store: Store::InMemory)
+    @store = store.new
   end
 
   def all_articles
-    @engine.all
+    @store.all
   end
 
   def add_article article
-    @engine.add article
+    @store.add article
   end
 
   def new_article(*args)
