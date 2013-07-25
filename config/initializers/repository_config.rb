@@ -1,6 +1,6 @@
 begin
-  store                      = Figaro.env.persistence.classify.constantize
-  ArticleRepository.instance = ArticleRepository.new(store: store)
+  storage                        = Figaro.env.persistence.classify.constantize
+  ArticleStorageAdapter.instance = storage.new
 rescue
-  ArticleRepository.instance = ArticleRepository.new
+  ArticleStorageAdapter.instance = MemoryStorage.new
 end

@@ -16,16 +16,16 @@ class Encyclopedia
   end
 
   def entries
-    ArticleRepository.all_articles
+    ArticleStorageAdapter.fetch_all
   end
 
   def add_entry(entry)
-    ArticleRepository.add_article(entry)
+    ArticleStorageAdapter.add(entry)
   end
 
   private
 
   def article_source
-    @article_source ||= ArticleRepository.public_method(:new_article)
+    @article_source ||= ArticleStorageAdapter.public_method(:new_article)
   end
 end
