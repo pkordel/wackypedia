@@ -34,9 +34,8 @@ describe Encyclopedia do
       subject.new_article.must_be_kind_of Article
     end
 
-    it "takes parameters" do
-      article = subject.new_article(title: 'My Title')
-      article.title.must_equal 'My Title'
+    it "sets encyclopedia" do
+      article = subject.new_article
       article.encyclopedia.must_equal subject
     end
   end
