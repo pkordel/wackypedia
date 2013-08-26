@@ -1,7 +1,6 @@
 # Wackypedia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Code Climate](https://codeclimate.com/github/pkordel/wackypedia.png)](https://codeclimate.com/github/pkordel/wackypedia)
 
 Things you may want to cover:
 
