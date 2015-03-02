@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.5'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.0'
 
 gem 'pg'
 
@@ -20,8 +20,6 @@ gem 'jbuilder', '~> 1.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-gem 'thin'
 
 gem 'bootstrap-sass'
 gem 'figaro'
@@ -44,4 +42,4 @@ group :test do
   gem 'minitest-focus'
 end
 
-gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]

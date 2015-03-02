@@ -5,11 +5,11 @@ require 'minitest/autorun'
 # require 'minitest/rails'
 # require 'minitest/rails/capybara'
 require 'minitest/focus'
-require 'minitest/colorize'
+# require 'minitest/colorize'
 
 require 'rr'
 require 'ostruct'
-$: << File.expand_path('../lib', File.dirname(__FILE__))
+$LOAD_PATH << File.expand_path('../lib', File.dirname(__FILE__))
 
 module Kernel
   alias_method :context, :describe
