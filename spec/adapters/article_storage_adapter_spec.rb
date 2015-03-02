@@ -12,48 +12,47 @@ describe ArticleStorageAdapter do
     ArticleStorageAdapter
   end
 
-  context "when using in memory engine" do
+  context 'when using in memory engine' do
     before do
       subject.clear
       subject.add first
     end
 
-    it "fetchs an article" do
+    it 'fetchs an article' do
       subject.fetch(1).must_equal first
     end
 
-    it "fetchs first article" do
+    it 'fetchs first article' do
       subject.first.must_equal first
     end
 
-    it "fetchs last article" do
+    it 'fetchs last article' do
       subject.add second
       subject.last.must_equal second
     end
 
-    it "fetchs all articles" do
+    it 'fetchs all articles' do
       subject.fetch_all.must_equal [first]
     end
 
-    it "fetchs subset of records" do
+    it 'fetchs subset of records' do
       subject.add second
       subject.take(1).must_equal [first]
     end
 
-    it "removes an article" do
+    it 'removes an article' do
       subject.add second
       subject.remove 1
       subject.fetch_all.must_equal [second]
     end
 
-    it "builds a new article object" do
+    it 'builds a new article object' do
       require 'active_model'
       require_relative '../../app/models/article'
 
       article = subject.new_article(title: 'Title', body: 'Body')
       article.title.must_equal 'Title'
-      article.body.must_equal  'Body'
+      article.body.must_equal 'Body'
     end
   end
-
 end

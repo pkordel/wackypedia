@@ -8,9 +8,9 @@ class ArticlesController < ApplicationController
   def create
     @article = encyclopedia.new_article(article_params)
     if @article.publish
-      redirect_to root_path, notice: "Article added!"
+      redirect_to root_path, notice: 'Article added!'
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -25,5 +25,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body)
   end
-
 end

@@ -7,7 +7,7 @@ class Article
     @encyclopedia ||= THE_ENCYCLOPEDIA
   end
 
-  def publish(clock=DateTime)
+  def publish(clock = DateTime)
     return false unless valid?
     self.pubdate ||= clock.now
     @encyclopedia.add_entry(self)

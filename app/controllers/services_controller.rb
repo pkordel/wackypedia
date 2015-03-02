@@ -28,11 +28,18 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @service }
+        format.html do
+          redirect_to @service,
+                      notice: 'Service was successfully created.'
+        end
+        format.json do
+          render action: 'show', status: :created, location: @service
+        end
       else
         format.html { render action: 'new' }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @service.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -42,11 +49,15 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        format.html do
+          redirect_to @service, notice: 'Service was successfully updated.'
+        end
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @service.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -62,13 +73,13 @@ class ServicesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_service
-      @service = Service.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def service_params
-      params.require(:service).permit(:name, :code, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_service
+    @service = Service.find(params[:id])
+  end
+
+  def service_params
+    params.require(:service).permit(:name, :code, :price)
+  end
 end

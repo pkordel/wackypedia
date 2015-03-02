@@ -20,31 +20,31 @@ describe Encyclopedia do
     subject.entries.must_equal []
   end
 
-  it "adds an entry" do
+  it 'adds an entry' do
     entry = Struct.new(:id, :title).new
     subject.add_entry entry
     subject.entries.must_equal [entry]
   end
 
-  describe ".new_article" do
+  describe '.new_article' do
     require 'active_model'
     require_relative '../../app/models/article'
 
-    it "builds a new article" do
+    it 'builds a new article' do
       subject.new_article.must_be_kind_of Article
     end
 
-    it "sets encyclopedia" do
+    it 'sets encyclopedia' do
       article = subject.new_article
       article.encyclopedia.must_equal subject
     end
   end
 
-  describe "#model_name" do
+  describe '#model_name' do
     require 'active_model'
     require_relative '../../config/initializers/inflections'
 
-    it "knows about model name" do
+    it 'knows about model name' do
       subject.class.model_name.singular.must_equal 'encyclopedia'
       subject.class.model_name.plural.must_equal 'encyclopedias'
     end

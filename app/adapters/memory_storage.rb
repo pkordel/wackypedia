@@ -4,10 +4,10 @@ class MemoryStorage
   def_delegators :@storage, :first, :last, :clear, :take
 
   def initialize
-    @storage = Array.new
+    @storage = []
   end
 
-  def fetch id
+  def fetch(id)
     @storage[id - 1]
   end
 
@@ -15,13 +15,12 @@ class MemoryStorage
     @storage
   end
 
-  def add object
+  def add(object)
     object.id = @storage.size + 1
     @storage << object
   end
 
-  def remove id
+  def remove(id)
     @storage.delete_at(id - 1)
   end
-
 end
