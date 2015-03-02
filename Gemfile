@@ -38,7 +38,6 @@ group :test do
   gem 'rr'
   gem 'minitest'
   gem 'minitest-rails-capybara'
-  gem 'minitest-colorize'
   gem 'minitest-focus'
 end
 

@@ -5,7 +5,6 @@ require 'minitest/autorun'
 # require 'minitest/rails'
 # require 'minitest/rails/capybara'
 require 'minitest/focus'
-# require 'minitest/colorize'
 
 require 'rr'
 require 'ostruct'
